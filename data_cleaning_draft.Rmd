@@ -1,0 +1,30 @@
+---
+title: "data_cleaning"
+author: "Li Jiang"
+date: "2025-02-09"
+output: html_document
+---
+
+```{r}
+#load packages 
+library(readr)
+library(dplyr)
+library(tidyverse)
+library(janitor)
+
+```
+
+
+```{r}
+#data import
+raw_data <- read_csv("C:/Users/Jiang/Desktop/2025Spring/Integrated Capstone/Data selection/Meat science&zoonotic disease/AJARESubmissionCode_4_24/diseasefooddatfull12822.csv")
+View(raw_data)
+```
+
+```{r}
+test <- raw_data %>% 
+  clean_names() %>%
+  filter(country %in% c('China', 'Taiwan'))
+print(test)
+```
+
