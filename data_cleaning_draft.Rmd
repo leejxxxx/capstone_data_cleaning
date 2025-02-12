@@ -36,7 +36,7 @@ clean_data <- raw_data %>%
     outbreak_event,
     cattle_meat_tonnes, chicken_meat_tonnes, pigs_meat_tonnes,
     nitrogen_use_tonnes, phosphate_use_tonnes,
-    gdp, population,
+    gd_ppc, population,
     country, year
   )
 ```
