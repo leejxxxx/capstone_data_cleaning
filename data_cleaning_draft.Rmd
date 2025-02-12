@@ -28,3 +28,22 @@ test <- raw_data %>%
 print(test)
 ```
 
+```{r}
+#draft clean dataset
+clean_data <- raw_data %>% 
+  clean_names() %>%
+  select(
+    outbreak_event,
+    cattle_meat_tonnes, chicken_meat_tonnes, pigs_meat_tonnes,
+    nitrogen_use_tonnes, phosphate_use_tonnes,
+    gdp, population,
+    country, year
+  )
+```
+
+```{r}
+#draft counting 0 values in outbreak to test if hurdle model should be used
+zero_count <- sum(clean_data$outbreak_event == 0, na.rm = TRUE)
+zero_count
+```
+
